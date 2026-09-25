@@ -1,0 +1,21 @@
+
+name: Daily Inspirational Bot
+
+on:
+  schedule:
+    - cron: "0 13 * * *"
+  workflow_dispatch:
+
+jobs:
+  daily:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Run daily task
+        run: |
+          echo "Daily inspirational bot is running!"
+          cat quotes.json
+
+      
